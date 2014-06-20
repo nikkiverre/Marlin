@@ -4031,7 +4031,7 @@ pins
 /// set pin as input
 #undef _SET_INPUT
 #define _SET_INPUT(p)   do { CORE_PIN ## p ## _CONFIG = PORT_PCR_MUX(1); \
-                          GPIO_BITBAND(CORE_PIN ## IO ## _DDRREG , CORE_PIN ## p ## _BIT) = 0; \
+                          GPIO_BITBAND(CORE_PIN ## p ## _DDRREG , CORE_PIN ## p ## _BIT) = 0; \
                           } while (0)
 /// set pin as output
 #undef _SET_OUTPUT
