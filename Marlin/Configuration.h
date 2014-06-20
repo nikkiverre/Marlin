@@ -63,6 +63,7 @@
 // 82 = Brainwave (AT90USB646)
 // 83 = SAV Mk-I (AT90USB1286)
 // 84 = Teensy++2.0 (AT90USB1286) // CLI compile: DEFINES=AT90USBxx_TEENSYPP_ASSIGNMENTS HARDWARE_MOTHERBOARD=84  make
+// 85 = Teensy 3.1
 // 9  = Gen3+
 // 70 = Megatronics
 // 701= Megatronics v2.0
@@ -74,7 +75,8 @@
 // 88 = 5DPrint D8 Driver Board
 
 #ifndef MOTHERBOARD
-#define MOTHERBOARD 7
+//#define MOTHERBOARD 7
+#define MOTHERBOARD 85 // for testing Teensy 3.1...
 #endif
 
 // Define this to set a custom name for your generic Mendel,
