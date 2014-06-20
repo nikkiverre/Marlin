@@ -177,9 +177,10 @@ asm volatile ( \
 static unsigned short OCR1Aval;
 class OCR1Aemu {
   public: inline OCR1Aemu & operator = (unsigned short val) __attribute__((always_inline)) {
-    unsigned short old = FTM2_C0V - OCR1Aval;
-    FTM2_C0V += val;
+    __disable_irq();
+    FTM2_C0V = FTM2_C0V - OCR1Aval + val;
     OCR1Aval = val;
+    __enable_irq();
     return *this;
   }
 } OCR1A;
