@@ -4047,6 +4047,7 @@ pins
 /// check if pin is an timer (not actually used by Marlin)
 #undef GET_TIMER
 #define DIO0_PIN // to pass the test below...
+#define square(n) ((n) * (n)) // avr-libc nonstandard function
 
 #endif // Teensy 3.x
 
