@@ -755,6 +755,7 @@ void tp_init()
   #endif
 
   // Set analog inputs
+#if defined(__AVR__)
   ADCSRA = 1<<ADEN | 1<<ADSC | 1<<ADIF | 0x07;
   DIDR0 = 0;
   #ifdef DIDR2
@@ -793,6 +794,7 @@ void tp_init()
   // Interleave temperature interrupt with millies interrupt
   OCR0B = 128;
   TIMSK0 |= (1<<OCIE0B);  
+#endif
   
   // Wait for temperature measurement to settle
   delay(250);
@@ -1032,6 +1034,7 @@ int read_max6675()
 #endif
 
 
+#if defined(__AVR__)
 // Timer 0 is shared with millies
 ISR(TIMER0_COMPB_vect)
 {
@@ -1295,6 +1298,7 @@ ISR(TIMER0_COMPB_vect)
   }
 #endif //BABYSTEPPING
 }
+#endif // __AVR__
 
 #ifdef PIDTEMP
 // Apply the scale factors to the PID values

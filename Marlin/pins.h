@@ -2071,8 +2071,9 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
 #define Y_STOP_PIN          3
 #define Z_STOP_PIN          4
 
-#define TEMP_0_PIN          7 // Extruder / Analog pin numbering
-#define TEMP_BED_PIN        6 // Bed / Analog pin numbering
+// TODO: temperature.cpp still only AVR compatible - much ADC code
+#define TEMP_0_PIN         -1 // Extruder / Analog pin numbering
+#define TEMP_BED_PIN       -1 // Bed / Analog pin numbering
 #define TEMP_1_PIN         -1
 #define TEMP_2_PIN         -1
 
