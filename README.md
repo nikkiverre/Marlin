@@ -1,3 +1,14 @@
+#Teensy 3.1 Porting Project#
+
+This copy of Marlin is an initial effort to port to Teensy 3.1 (32 bit ARM).
+
+Currently (June 21, 2014) it compiles without error, but it utterly untested.  This section will be updated as the code is tested on real hardware.
+
+Here's the discussion regarding this porting effort.  Help is needed with testing!!
+
+http://forum.pjrc.com/threads/26015-3D-Printer-Software-with-Teensy-3-1
+
+
 ==========================
 Marlin 3D Printer Firmware
 ==========================
