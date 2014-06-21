@@ -98,6 +98,7 @@ volatile signed char count_direction[NUM_AXIS] = { 1, 1, 1, 1};
 // uses:
 // r26 to store 0
 // r27 to store the byte 1 of the 24 bit result
+#if defined(__AVR__)
 #define MultiU16X8toH16(intRes, charIn1, intIn2) \
 asm volatile ( \
 "clr r26 \n\t" \
@@ -118,11 +119,15 @@ asm volatile ( \
 : \
 "r26" \
 )
+#else
+#define MultiU16X8toH16(intRes, charIn1, intIn2) (intRes = ((uint32_t)charIn1 * intIn2) >> 8)
+#endif
 
 // intRes = longIn1 * longIn2 >> 24
 // uses:
 // r26 to store 0
 // r27 to store the byte 1 of the 48bit result
+#if defined(__AVR__)
 #define MultiU24X24toH16(intRes, longIn1, longIn2) \
 asm volatile ( \
 "clr r26 \n\t" \
@@ -163,6 +168,9 @@ asm volatile ( \
 : \
 "r26" , "r27" \
 )
+#else
+#define MultiU24X24toH16(intRes, longIn1, longIn2) (intRes = ((uint64_t)longIn1 * longIn2) >> 24)
+#endif
 
 // Some useful constants
 
