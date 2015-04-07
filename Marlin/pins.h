@@ -2045,35 +2045,35 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
 
 // TODO: needs work here, to define pinout....
 
-#define X_STEP_PIN         0 //  0 Marlin
-#define X_DIR_PIN          1 //  1 Marlin
+#define X_STEP_PIN         5 //  0 Marlin
+#define X_DIR_PIN          6 //  1 Marlin
 #define X_ENABLE_PIN       -1
 
-#define Y_STEP_PIN         2 //  2 Marlin
-#define Y_DIR_PIN          3 //  3
+#define Y_STEP_PIN         7 //  2 Marlin
+#define Y_DIR_PIN          8 //  3
 #define Y_ENABLE_PIN       -1    // Shared w/x
 
-#define Z_STEP_PIN         4 //  4
-#define Z_DIR_PIN          5 //  5
+#define Z_STEP_PIN         9 //  4
+#define Z_DIR_PIN          10 //  5
 #define Z_ENABLE_PIN       -1 // Shared w/x
 
-#define E0_STEP_PIN        6 //  6
-#define E0_DIR_PIN         7 //  7
+#define E0_STEP_PIN        11 //  6
+#define E0_DIR_PIN         12 //  7
 #define E0_ENABLE_PIN      -1 // Shared w/x
 
-#define HEATER_0_PIN       15 //  21  // Extruder
+#define HEATER_0_PIN       22 //  21  // Extruder
 #define HEATER_1_PIN       -1
 #define HEATER_2_PIN       -1
-#define HEATER_BED_PIN     14 // 20  // Bed
-#define FAN_PIN            16 // 22  // Fan
+#define HEATER_BED_PIN     23 // 20  // Bed
+#define FAN_PIN            -1 // 22  // Fan
 
-#define X_STOP_PIN          2
-#define Y_STOP_PIN          3
-#define Z_STOP_PIN          4
+#define X_STOP_PIN          1
+#define Y_STOP_PIN          2
+#define Z_STOP_PIN          3
 
 // TODO: temperature.cpp still only AVR compatible - much ADC code
-#define TEMP_0_PIN         -1 // Extruder / Analog pin numbering
-#define TEMP_BED_PIN       -1 // Bed / Analog pin numbering
+#define TEMP_0_PIN         A1 // Extruder / Analog pin numbering
+#define TEMP_BED_PIN       A2 // Bed / Analog pin numbering
 #define TEMP_1_PIN         -1
 #define TEMP_2_PIN         -1
 
